@@ -1,0 +1,145 @@
+<h1>Crear alumno</h1>
+<h3>Datos personales</h3>
+<small>Ingrese rut:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+  <input type="text" nz-input [(ngModel)]="rut" (ngModelChange)="rut = helper.formatearRut($event)" placeholder="Rut 12345678-9"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+<small>Ingrese nombres:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="nombre" placeholder="Nombres"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+  <small>Ingrese apellido paterno:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="aPaterno" placeholder="Apellido paterno"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+  <small>Ingrese apellido materno:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="aMaterno" placeholder="apellido materno"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+  <small>Ingrese celular:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="telefono" placeholder="celular: +569 123456789"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+  
+  <small>Ingrese dirección:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="direccion" placeholder="Dirección"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+
+  <small>Ingrese correo:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="correo" placeholder="Correo electrónico"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombre"
+      (click)="nombre = ''"
+    ></span>
+  </ng-template>
+  <div class="contFecha">
+    <small>Seleccione fecha de nacimiento:</small>
+    <nz-date-picker [(ngModel)]="fechaNacimiento" (ngModelChange)="date($event)"></nz-date-picker>
+  </div>
+
+
+  <div class="contCombo">
+    <small>Seleccione región:</small>
+    <nz-select [(ngModel)]="regionsel" nzAllowClear nzPlaceHolder="Seleccione región" (ngModelChange)="obtenerComuna()">
+      <nz-option  *ngFor="let g of regiones" [nzValue]="g.regionid" [nzLabel]="g.regionname"></nz-option>
+    </nz-select>
+</div>
+
+
+
+<div class="contCombo">
+  <small>Seleccione comuna:</small>
+  <nz-select [(ngModel)]="comunaSel" nzAllowClear nzPlaceHolder="Seleccione comuna">
+    <nz-option  *ngFor="let g of comunas" [nzValue]="g.comunaid" [nzLabel]="g.comunaname"></nz-option>
+  </nz-select>
+</div>
+
+
+
+
+<div class="contCombo">
+    <small>Seleccione genero:</small>
+    <nz-select [(ngModel)]="generoSel" nzAllowClear nzPlaceHolder="Seleccione genero">
+      <nz-option  *ngFor="let g of generos" [nzValue]="g.idGenero" [nzLabel]="g.nombreGenero"></nz-option>
+    </nz-select>
+</div>
+
+
+<h3>Datos Acádemicos</h3>
+<div class="contCombo">
+  <small>Seleccione nivel educacional:</small>
+  <nz-select [(ngModel)]="nivelEducacionalSel" nzAllowClear nzPlaceHolder="Seleccione nivel educacional">
+    <!-- <nz-option nzDisabled [nzValue]="0" nzLabel="Seleccione"></nz-option> -->
+    <nz-option  *ngFor="let n of nivelesEducacionales" [nzValue]="n.idNivelEducacional" [nzLabel]="n.nivelEducacional"></nz-option>
+  </nz-select>
+</div>
+
+<button class="btnGuardar" (click)="agregarAlumno()" nz-button nzType="primary">Crear alumno</button>

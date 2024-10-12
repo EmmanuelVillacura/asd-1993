@@ -1,0 +1,25 @@
+<h1>Listado de cursos</h1>
+<div class="box">
+    <nz-card style="width: 300px;margin-top: 16px" [nzActions]="[actionSetting, actionEdit, actionEllipsis]" *ngFor="let c of cursos">
+        <nz-skeleton [nzActive]="true" [nzLoading]="loading" [nzAvatar]="{ size: 'large' }">
+        <nz-card-meta
+            [nzAvatar]="avatarTemplate"
+            [nzTitle]="c.cursonombre"
+            [nzDescription]="c.nombreJornada"
+        ></nz-card-meta>
+        </nz-skeleton>
+
+    <ng-template #avatarTemplate>
+        <nz-avatar nzSrc=""></nz-avatar>
+    </ng-template>
+    <ng-template #actionSetting>
+        <span nz-icon nzType="delete" (click)="eliminarCurso(c.idCurso)"></span>
+    </ng-template>
+    <ng-template #actionEdit>
+        <span nz-icon nzType="edit" (click)="editarCurso(c.idCurso)"></span>
+    </ng-template>
+    <ng-template #actionEllipsis>
+        <span nz-icon nzType="ellipsis"></span>
+    </ng-template>
+</nz-card>
+</div>

@@ -1,0 +1,16 @@
+<h1>Editar Matricula</h1>
+<small>Ingrese el rut del alumno:</small>
+<nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+    <input type="text" nz-input placeholder="18.402429-2" />
+  </nz-input-group>
+  <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+  </ng-template>
+
+  <nz-empty *ngIf="matriculaAlumno.length == 1"></nz-empty>
+
+
+
+
+
+

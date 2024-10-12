@@ -1,0 +1,105 @@
+
+
+<h1>Crear matricula</h1>
+<!-- <h3>Subir imagenes cedula de identidad</h3>
+<small>Fotos desde la app</small>
+<div class="cont">
+
+  <nz-switch [(ngModel)]="isImageMobile"></nz-switch>
+</div>
+<div class="clearfix" *ngIf="!isImageMobile">
+  <nz-upload class="upload-list-inline" [nzAction]="urlImgUp" nzListType="picture"
+    [(nzFileList)]="fileList2
+      " [nzMultiple]="true" [nzLimit]="2">
+    <button nz-button>
+      <span>
+        <span nz-icon nzType="upload"></span>
+        Upload
+      </span>
+    </button>
+  </nz-upload>
+</div> -->
+
+
+<!-- 
+<ng-container *ngIf="isImageMobile">
+  <small>Ingrese el rut del alumno:</small>
+  <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+    <input type="text" nz-input placeholder="18.402429-2" />
+  </nz-input-group>
+  <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+  </ng-template>
+
+  <div class="contImg">
+    <img nz-image width="200px" height="200px"
+      nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" alt=""/>
+  <img nz-image width="200px" height="200px"
+    nzSrc="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" alt=""/>
+  <nz-empty *ngIf="imagenAlumnoApp.length == 0"></nz-empty>
+  </div>
+</ng-container> -->
+
+
+<h3>Alumno</h3>
+<nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+  <input type="text" [(ngModel)]="busquedaAlumno" (ngModelChange)="busquedaAlumno = helper.formatearRut(busquedaAlumno)" nz-input placeholder="Ingrese rut alumno" />
+</nz-input-group>
+<ng-template #suffixIconButton>
+  <button nz-button nzType="primary" (click)="buscarAlumno()" nzSearch><span nz-icon nzType="search"></span></button>
+</ng-template>
+
+<div class="cuadrado" *ngFor="let a of alumnoBuscado">
+  <div class="miniBox">
+    <h3>Rut: </h3>
+    <h3>{{a.rutUsuario}}</h3>
+  </div>
+  <div class="miniBox">
+    <h3>Nombre: </h3>
+    <h3>{{a.nombresUsuario + ' ' + a.apellidoPaternoUsuario + ' ' + a.apellidoMaternoUsuario}}</h3>
+  </div>
+</div>
+
+<!-- <div class="cuadrado">
+  <div class="miniBox">
+    <h3>Alumno no encontrado</h3>
+  </div>
+</div> -->
+
+
+
+<h3>Curso</h3>
+<div class="contCombo">
+  <small>Seleccione curso:</small>
+  <nz-select [(ngModel)]="cursoSel" nzAllowClear nzPlaceHolder="Seleccione nivel educacional" (ngModelChange)="cambioJornada()">
+    <!-- <nz-option nzDisabled [nzValue]="0" nzLabel="Seleccione"></nz-option> -->
+    <nz-option *ngFor="let c of cursos" [nzValue]="c.idCurso" [nzLabel]="c.nombreCurso"></nz-option>
+  </nz-select>
+</div>
+
+
+<h3>Pago</h3>
+<div class="contCombo">
+  <small>Seleccione medio de pago:</small>
+  <nz-select [(ngModel)]="medioPagoSel" nzAllowClear nzPlaceHolder="Seleccione medio de pago">
+    <!-- <nz-option nzDisabled [nzValue]="0" nzLabel="Seleccione"></nz-option> -->
+    <nz-option *ngFor="let m of mediosPagos" [nzValue]="m.idMedioPago" [nzLabel]="m.medioPago"></nz-option>
+
+  </nz-select>
+</div>
+
+<small>Ingrese monto pagado:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="pago" placeholder="$"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+    ></span>
+  </ng-template>
+
+
+  <button (click)="agregarMatricula()" class="btnGuardar" nz-button nzType="primary">Crear matricula</button>

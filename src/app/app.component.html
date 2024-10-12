@@ -1,0 +1,75 @@
+<ng-container  *ngIf="loginService.currentUserValue">
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+      <div class="logo">
+        <img src="assets/img/Logo_Disney_XD.svg" alt="" height="20">
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-submenu nzTitle="Matriculas" nzIcon="user-add">
+          <ul>
+            <li nz-menu-item (click)="agregarMatricula()"><span nz-icon nzType="plus" nzTheme="outline"></span>Crear matricula</li>
+            <li nz-menu-item (click)="editarMatricula()"><span nz-icon nzType="edit" nzTheme="outline"></span>Editar matricula</li>
+            <li nz-menu-item (click)="eliminarMatricula()"><span nz-icon nzType="delete" nzTheme="outline"></span>Eliminar matricula</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Curso" nzIcon="check">
+          <ul>
+            <li nz-menu-item (click)="agregarCurso()"><span nz-icon nzType="plus" nzTheme="outline"></span>Agregar curso</li>
+            <li nz-menu-item (click)="buscarCurso()"><span nz-icon nzType="edit" nzTheme="outline"></span>Listar curso</li>
+            <li nz-menu-item (click)="eliminarCurso()"><span nz-icon nzType="delete" nzTheme="outline"></span>Eliminar curso</li>
+          </ul>
+        </li>
+
+        <li nz-submenu nzTitle="Alumno" nzIcon="check">
+          <ul>
+            <li nz-menu-item (click)="agregarAlumno()"><span nz-icon nzType="plus" nzTheme="outline"></span>Agregar alumno</li>
+            <li nz-menu-item (click)="listasAlumno()"><span nz-icon nzType="edit" nzTheme="outline"></span>Buscar alumno</li>
+            <li nz-menu-item (click)="eliminarAlumno()"><span nz-icon nzType="delete" nzTheme="outline"></span>Eliminar alumno</li>
+          </ul>
+        </li>
+<!--         <li nz-submenu nzTitle="Profesor" nzIcon="user">
+            <ul>
+                <li nz-menu-item (click)="agregarProfesor()"><span nz-icon nzType="plus" nzTheme="outline"></span>Agregar profesor</li>
+                <li nz-menu-item (click)="editarProfesor()"><span nz-icon nzType="edit" nzTheme="outline"></span>Editar profesor</li>
+                <li nz-menu-item (click)="eliminarProfesor()"><span nz-icon nzType="delete" nzTheme="outline"></span>Eliminar profesor</li>
+            </ul>
+          </li> -->
+
+          <!-- <li nz-submenu nzTitle="PDF" nzIcon="user-add">
+            <ul>
+              <li nz-menu-item (click)="pdf()"><span nz-icon nzType="plus" nzTheme="outline"></span>Crear contrato</li>
+            </ul>
+          </li> -->
+         <li nz-menu-item>
+          <span nz-icon nzType="close"></span>
+          <span (click)="logOut()">Cerrar sesión</span>
+        </li> 
+      </ul>
+
+      
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <span
+          class="trigger"
+          nz-icon
+          [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          (click)="isCollapsed = !isCollapsed"
+        ></span>
+      </nz-header>
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+      <nz-footer>Todos los derechos reservados ©2023 Matiivilla</nz-footer>
+    </nz-layout>
+  </nz-layout>
+
+</ng-container>
+
+<ng-container  *ngIf="!loginService.currentUserValue">
+  <router-outlet></router-outlet>
+</ng-container>
+
+
+
+

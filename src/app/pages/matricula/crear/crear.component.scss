@@ -1,0 +1,55 @@
+.contFecha{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contCombo{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    margin-top: 20px;
+}
+
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 10%;
+}
+
+img{
+    margin: 20px;
+}
+nz-empty{
+    margin-top: 20px;
+}
+
+
+
+.cuadrado {
+    width: 100%; /* Cambia el tamaño del cuadrado según tus necesidades */
+    height: auto; /* Cambia el tamaño del cuadrado según tus necesidades */
+    background-color: #f0f0f0; /* Cambia el color del fondo del cuadrado */
+    border: 2px solid #333; /* Cambia el grosor y el color del borde del cuadrado */
+    border-radius: 1.5rem;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.miniBox{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    //border:solid red;
+    
+}

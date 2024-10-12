@@ -1,0 +1,104 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+li{
+  span{
+    padding-right: 5px;
+  }
+}
+
+nz-sider{
+  position: static;
+}
+
+
+.btnGuardar{
+  margin-top: 50px;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+
+
+.no-background-modal .modal-content {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.app-modal .modal-content {
+  background-color: #f8d7da; /* Fondo rojo claro */
+  border: 1px solid #f5c6cb; /* Borde rojo más oscuro */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Sombra */
+  color: #721c24; /* Texto oscuro */
+}
+
+.app-modal .modal-header {
+  border-bottom: 1px solid #f5c6cb; /* Borde rojo más oscuro */
+  background-color: #f8d7da; /* Fondo rojo claro */
+}
+
+.app-modal .modal-body {
+  color: #721c24; /* Texto oscuro */
+}
+
+.app-modal .modal-footer {
+  border-top: 1px solid #f5c6cb; /* Borde rojo más oscuro */
+  background-color: #f8d7da; /* Fondo rojo claro */
+}
+
+.app-modal .modal-header .btn-close {
+  color: #721c24; /* Color del icono de cierre */
+}
+
+.app-modal .modal-header .btn-close:hover {
+  color: #fff; /* Cambio de color al pasar el ratón sobre el icono */
+}
+
+.app-modal .modal-header .btn-close:focus {
+  color: #fff; /* Cambio de color al enfocar el icono */
+  box-shadow: none; /* Quita la sombra al enfocar */
+}

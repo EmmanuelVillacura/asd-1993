@@ -1,0 +1,14 @@
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nz-card{
+    background-color: rgb(196, 193, 193);
+}
+
+ng-template{
+    background-color: rgb(196, 193, 193);
+}

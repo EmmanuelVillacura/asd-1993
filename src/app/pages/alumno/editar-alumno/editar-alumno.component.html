@@ -1,0 +1,132 @@
+<!-- <h1>Crear curso</h1>
+
+<small>Ingrese nombre del curso:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="nombreCurso" placeholder="Nombre del curso"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombreCurso"
+      (click)="nombreCurso = ''"
+    ></span>
+  </ng-template>
+
+
+
+  <div class="contCombo">
+    <small>Seleccione jornada:</small>
+    <nz-select [(ngModel)]="jornadaSel" nzAllowClear nzPlaceHolder="Seleccione jornada">
+      <nz-option  *ngFor="let j of jornada" [nzValue]="j.idJornada" [nzLabel]="j.nombreJornada"></nz-option>
+    </nz-select>
+</div>
+
+
+
+<small>Ingrese duración del curso en meses:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="duracionCurso" placeholder="Duración del curso"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="duracionCurso"
+      (click)="nombreCurso = ''"
+    ></span>
+  </ng-template>
+
+
+<div class="box">
+    <small>Seleccione el mes de inicio del curso:</small>
+    <nz-date-picker nzMode="month" [(ngModel)]="mesInicio" (ngModelChange)="onChangeInicio($event)" [nzFormat]="'MM'"></nz-date-picker>
+</div>
+
+
+<div class="box">
+    <small>Seleccione el mes de termino del curso:</small>
+    <nz-date-picker nzMode="month" [(ngModel)]="mesTermino" (ngModelChange)="onChangeTermino($event)" [nzFormat]="'MM'"></nz-date-picker>
+</div>
+
+
+<small>Ingrese el valor de la matricula del curso:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="valorMatricula" placeholder="Matricula del curso"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombreCurso"
+      (click)="nombreCurso = ''"
+    ></span>
+  </ng-template>
+
+
+  <small>Ingrese el valor de la certificación del curso:</small>
+<nz-input-group [nzSuffix]="inputClearTpl">
+    <input type="text" nz-input [(ngModel)]="valorCertificacion" placeholder="Certificación del curso"/>
+  </nz-input-group>
+  <ng-template #inputClearTpl>
+    <span
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="nombreCurso"
+      (click)="nombreCurso = ''"
+    ></span>
+  </ng-template>
+
+
+  <small>Ingrese el valor de la mensualidad del curso:</small>
+  <nz-input-group [nzSuffix]="inputClearTpl">
+      <input type="text" nz-input [(ngModel)]="valorMensualidad" placeholder="Mensualidad del curso"/>
+    </nz-input-group>
+    <ng-template #inputClearTpl>
+      <span
+        nz-icon
+        class="ant-input-clear-icon"
+        nzTheme="fill"
+        nzType="close-circle"
+        *ngIf="nombreCurso"
+        (click)="nombreCurso = ''"
+      ></span>
+    </ng-template>
+
+    <div class="box">
+        <small>Ingrese la hora de inicio del curso:</small>
+        <nz-time-picker [(ngModel)]="horaInicio" [nzFormat]="'HH:mm'" nzSize="medium"></nz-time-picker>
+    </div>
+
+    <div class="box">
+        <small>Ingrese la hora de termino del curso:</small>
+        <nz-time-picker [(ngModel)]="horaTermino" [nzFormat]="'HH:mm'" nzSize="medium"></nz-time-picker>
+    </div>
+
+
+
+<div class="box">
+    <small>Seleccione los días del curso</small>
+    <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="log($event)">
+        <div nz-row>
+          <div nz-col nzSpan="8"><label nz-checkbox nzValue="Lunes" [ngModel]="false">Lunes</label></div>
+          <div nz-col nzSpan="8"><label nz-checkbox nzValue="Martes">Martes</label></div>
+          <div nz-col nzSpan="8"><label nz-checkbox nzValue="Miercoles">Miercoles</label></div>
+          <div nz-col nzSpan="8"><label nz-checkbox nzValue="Jueves">Jueves</label></div>
+          <div nz-col nzSpan="8"><label nz-checkbox nzValue="Viernes">Viernes</label></div>
+        </div>
+      </nz-checkbox-wrapper>
+</div>
+
+
+
+
+<button class="btnGuardar" nz-button nzType="primary" (click)="crearCurso()">Crear curso</button> -->
